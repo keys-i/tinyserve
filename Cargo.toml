@@ -1,0 +1,8 @@
+[package]
+name = "tinyserve"
+version = "0.1.0"
+edition = "2024"
+authors = ["keys-i <70819367+keys-i@users.noreply.github.com>"]
+license = LICENSE
+
+[dependencies]
