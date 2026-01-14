@@ -31,25 +31,29 @@ name = "tinyserve"
 path = "src/main.rs"
 
 [profile.dev]
-opt-level = 1            # small optimization for your code
-debug = 2                # good backtraces + debugger
+opt-level = 1
+debug = 2
 strip = "none"
-panic = "unwind"         # nicer dev panics/backtraces
+panic = "unwind"
 incremental = true
-codegen-units = 256      # faster compiles
+codegen-units = 256
 lto = "off"
 debug-assertions = true
 overflow-checks = true
 
 [profile.dev.package."*"]
-opt-level = 2            # big win for dev runtime (deps), modest compile cost
+opt-level = 2
 debug = 1
+
+
+[profile.release]
 opt-level = 3
 debug = 0
-strip = "symbols"        # use "debuginfo" if you want smaller + keep backtraces
-lto = true               # or "thin" for faster link with near-same speed
+strip = "symbols"
+lto = true
 codegen-units = 1
 panic = "abort"
 incremental = false
+
 
 [dependencies]
